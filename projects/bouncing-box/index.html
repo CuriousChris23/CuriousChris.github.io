@@ -70,9 +70,9 @@
       	turn it around!
       	*/
         function update() {
+          console.log(speed);
           moveBoxTo(positionX);
           positionX = positionX + speed;
-          moveBoxTo(positionX);
           if (positionX > boardWidth) {
             speed = -speed;
           } else if (positionX < 0) {
@@ -89,10 +89,9 @@
           positionX = 0;
           changeBoxText(1);
           if (speed < 0) {
-            speed = speed + 3;
-          } 
-          else (speed > 0);{
             speed = speed - 3;
+          } else if (speed > 0) {
+            speed = speed + 3;
           }
         }
       })();
