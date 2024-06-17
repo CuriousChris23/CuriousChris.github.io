@@ -42,48 +42,52 @@ var init = function (window) {
         */
     function update() {
       // TODO 4 : Update the circle's position //
-      
+
       physikz.updatePosition();
       physikz.updatePosition();
       physikz.updatePosition();
       physikz.updatePosition();
       physikz.updatePosition();
     }
-      // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
+    // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
+    game.checkCirclePosition(circle);
+    game.checkCirclePosition();
+    game.checkCirclePosition();
+    game.checkCirclePosition();
+    game.checkCirclePosition();
+    // TODO 9 : Iterate over the array
+  };
 
-      // TODO 9 : Iterate over the array
-    }
-
-    /* 
+  /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
         it to the opposite side of the screen.
         */
-    game.checkCirclePosition = function (circle) {
-      // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
-      if (circle.x > canvas.width) {
-        circle.x = 0;
-      }
+  game.checkCirclePosition = function (circle) {
+    // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
+    if (circle.x > canvas.width) {
+      circle.x = 0;
+    }
 
-      // TODO 6 : YOUR CODE STARTS HERE //////////////////////
+    // TODO 6 : YOUR CODE STARTS HERE //////////////////////
 
-      // YOUR TODO 6 CODE ENDS HERE //////////////////////////
-    };
-
-    /////////////////////////////////////////////////////////////
-    // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
-    /////////////////////////////////////////////////////////////
-
-    view.addChild(fps);
-    app.addUpdateable(fps);
-
-    game.circle = circle;
-    game.circles = circles;
-    game.drawCircle = drawCircle;
-    game.update = update;
-
-    app.addUpdateable(window.opspark.game);
+    // YOUR TODO 6 CODE ENDS HERE //////////////////////////
   };
+
+  /////////////////////////////////////////////////////////////
+  // --- NO CODE BELOW HERE  --- DO NOT REMOVE THIS CODE --- //
+  /////////////////////////////////////////////////////////////
+
+  view.addChild(fps);
+  app.addUpdateable(fps);
+
+  game.circle = circle;
+  game.circles = circles;
+  game.drawCircle = drawCircle;
+  game.update = update;
+
+  app.addUpdateable(window.opspark.game);
+};
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
