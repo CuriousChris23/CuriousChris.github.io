@@ -55,7 +55,9 @@ $(document).ready(function () {
     else if (currentShape.color === "blue") {
       (currentShape.goodBehavior = "blink")
     }
-    else { currentShape.goodBehavior !== "spin" }
+    else { 
+      currentShape.goodBehavior = "spin" 
+    }
   }
 
 

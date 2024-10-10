@@ -74,6 +74,7 @@ h3 {
 
 #portfolio li {
   background: #012434ba;
+  color:aquamarine;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -85,7 +86,7 @@ h3 {
 
 #portfolio a {
   text-decoration: none;
-  color: #454545;
+  color: #01ecec;
 }
 /* responsive web design */
 @media screen and (min-width: 120px) and (max-width: 1080px) {
