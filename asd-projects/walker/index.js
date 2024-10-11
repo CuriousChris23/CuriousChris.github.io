@@ -1,8 +1,8 @@
 /* global $, sessionStorage */
 
 $(document).ready(runProgram); // wait for the HTML / CSS elements of the page to fully load, then execute runProgram()
-  
-function runProgram(){
+
+function runProgram() {
   ////////////////////////////////////////////////////////////////////////////////
   //////////////////////////// SETUP /////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -10,13 +10,19 @@ function runProgram(){
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-  
+var KEY = {
+  ENTER: 13,
+  Left: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+};
   // Game Item Objects
 
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keyDown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -27,22 +33,36 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+
 
   }
-  
+
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
-
+  function handleKeyDown(event) {
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed")
+    }
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed")
+    }
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed")
+    }
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed")
+    }
+    if (event.which === KEY.ENTER) {
+      console.log("enter pressed")
+    }
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
@@ -50,5 +70,5 @@ function runProgram(){
     // turn off event handlers
     $(document).off();
   }
-  
+
 }
