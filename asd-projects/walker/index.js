@@ -10,13 +10,21 @@ function runProgram() {
   // Constant Variables
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
-var KEY = {
-  ENTER: 13,
-  Left: 37,
-  UP: 38,
-  RIGHT: 39,
-  DOWN: 40,
-};
+  var KEY = {
+    ENTER: 13,
+    Left: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
+  };
+  var walker = {
+    XCOORDINATE: 0,
+    YCOORDINATE: 0,
+    speedXaxis: 0,
+    speedYaxis: 0,
+  };
+
+
   // Game Item Objects
 
 
@@ -45,16 +53,16 @@ var KEY = {
       console.log("enter pressed")
     }
     if (event.which === KEY.ENTER) {
-      console.log("enter pressed")
+      console.log("left pressed")
     }
     if (event.which === KEY.ENTER) {
-      console.log("enter pressed")
+      console.log("up pressed")
     }
     if (event.which === KEY.ENTER) {
-      console.log("enter pressed")
+      console.log("right pressed")
     }
     if (event.which === KEY.ENTER) {
-      console.log("enter pressed")
+      console.log("down pressed")
     }
   }
 
@@ -70,5 +78,11 @@ var KEY = {
     // turn off event handlers
     $(document).off();
   }
+  function repostitionGameItem(newFrame) {
+    walker.XCOORDINATE
+  }
+  function redrawGameItem(newFrame) {
+    walker.YCOORDINATE
 
+  }
 }
