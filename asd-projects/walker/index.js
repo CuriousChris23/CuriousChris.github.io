@@ -12,20 +12,20 @@ function runProgram() {
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   var KEY = {
     ENTER: 13,
-    Left: 37,
+    LEFT: 37,
     UP: 38,
     RIGHT: 39,
     DOWN: 40,
   };
+  
+  
+  // Game Item Objects
   var walker = {
-    XCOORDINATE: 0,
-    YCOORDINATE: 0,
+    xCoordinate: 0,
+    xCoordinate: 0,
     speedXaxis: 0,
     speedYaxis: 0,
   };
-
-
-  // Game Item Objects
 
 
   // one-time setup
@@ -52,16 +52,16 @@ function runProgram() {
     if (event.which === KEY.ENTER) {
       console.log("enter pressed")
     }
-    if (event.which === KEY.ENTER) {
+    if (event.which === KEY.LEFT) {
       console.log("left pressed")
     }
-    if (event.which === KEY.ENTER) {
+    if (event.which === KEY.UP) {
       console.log("up pressed")
     }
-    if (event.which === KEY.ENTER) {
+    if (event.which === KEY.RIGHT) {
       console.log("right pressed")
     }
-    if (event.which === KEY.ENTER) {
+    if (event.which === KEY.DOWN) {
       console.log("down pressed")
     }
   }
