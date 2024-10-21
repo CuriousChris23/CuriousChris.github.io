@@ -41,8 +41,7 @@ function runProgram() {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    (repostitionGameItem)
-      (redrawGameItem)
+    (repostitionGameItem, redrawGameItem)
   }
 
   /* 
@@ -87,8 +86,8 @@ function runProgram() {
     walker.coordinateX = walker.coordinateY + walker.speedX
   }
   function redrawGameItem(newFrame) {
-    walker.coordinateY = walker.coodinateX + walker.speedY 
-    $("").css("left", coordinateX)
-    coordinateY
+    walker.coordinateY = walker.coordinateX + walker.speedY
+    $("#event").css("left", coordinateX)
+  $("#event").css("up", coordinateY)
   }
 }
