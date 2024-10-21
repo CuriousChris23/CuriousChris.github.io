@@ -17,14 +17,14 @@ function runProgram() {
     RIGHT: 39,
     DOWN: 40,
   };
-  
-  
+
+
   // Game Item Objects
   var walker = {
-    xCoordinate: 0,
-    xCoordinate: 0,
-    speedXaxis: 0,
-    speedYaxis: 0,
+    cooridnateX: 0,
+    cooridnateY: 0,
+    speedX: 0,
+    speedY: 0,
   };
 
 
@@ -51,18 +51,23 @@ function runProgram() {
   function handleKeyDown(event) {
     if (event.which === KEY.ENTER) {
       console.log("enter pressed")
+      walker.speedX = -5
     }
     if (event.which === KEY.LEFT) {
       console.log("left pressed")
+      walker.speedX = -5
     }
     if (event.which === KEY.UP) {
       console.log("up pressed")
+      walker.speed = -5
     }
     if (event.which === KEY.RIGHT) {
       console.log("right pressed")
+      walker.speedX = -5
     }
     if (event.which === KEY.DOWN) {
       console.log("down pressed")
+      walker.speedY = -5
     }
   }
 
@@ -79,10 +84,10 @@ function runProgram() {
     $(document).off();
   }
   function repostitionGameItem(newFrame) {
-    walker.XCOORDINATE
+    walker.cooridnateX
   }
   function redrawGameItem(newFrame) {
-    walker.YCOORDINATE
+    walker.cooridnateY
 
   }
 }
