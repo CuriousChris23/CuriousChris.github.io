@@ -31,7 +31,8 @@ function runProgram() {
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
-
+  $(document).on('keyup', handleKeyUp);                           // change 'eventType' to the type of event you want to handle
+  
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -41,16 +42,32 @@ function runProgram() {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    (repostitionGameItem, redrawGameItem)
+    repostitionGameItem()
+    redrawGameItem()
   }
 
   /* 
   Called in response to events.
   */
-  function handleKeyDown(event) {
+ function handleKeyUp(event){
+  if (event.which === KEY.UP){
+    walker.speedY = 0
+  }
+  if(event.which === KEY.DOWN){
+    walker.speedY = 0
+  }
+  if(event.which === KEY.LEFT){
+    walker.speedX = 0
+  }
+  if(event.which === KEY.RIGHT){
+    walker.speedX = 0
+  }
+ }
+ 
+ 
+ function handleKeyDown(event) {
     if (event.which === KEY.ENTER) {
       console.log("enter pressed")
-      walker.speedX = -5
     }
     if (event.which === KEY.LEFT) {
       console.log("left pressed")
@@ -58,15 +75,15 @@ function runProgram() {
     }
     if (event.which === KEY.UP) {
       console.log("up pressed")
-      walker.speed = -5
+      walker.speedY = -5
     }
     if (event.which === KEY.RIGHT) {
       console.log("right pressed")
-      walker.speedX = -5
+      walker.speedX = 5
     }
     if (event.which === KEY.DOWN) {
       console.log("down pressed")
-      walker.speedY = -5
+      walker.speedY = 5
     }
   }
 
@@ -82,12 +99,15 @@ function runProgram() {
     // turn off event handlers
     $(document).off();
   }
+
   function repostitionGameItem(newFrame) {
-    walker.coordinateX = walker.coordinateY + walker.speedX
+    walker.coordinateX = walker.coordinateX + walker.speedX
+    walker.coordinateY = walker.coordinateY + walker.speedY
   }
+
   function redrawGameItem(newFrame) {
-    walker.coordinateY = walker.coordinateX + walker.speedY
-    $("#event").css("left", coordinateX)
-  $("#event").css("up", coordinateY)
+    $("#walker").css("left", walker.coordinateX)
+    $("#walker").css("top", walker.coordinateY)
   }
+
 }
