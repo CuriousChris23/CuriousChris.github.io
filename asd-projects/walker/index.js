@@ -32,7 +32,7 @@ function runProgram() {
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
   $(document).on('keyup', handleKeyUp);                           // change 'eventType' to the type of event you want to handle
-  
+
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -43,29 +43,30 @@ function runProgram() {
   */
   function newFrame() {
     repostitionGameItem()
+    wallCollision()
     redrawGameItem()
   }
 
   /* 
   Called in response to events.
   */
- function handleKeyUp(event){
-  if (event.which === KEY.UP){
-    walker.speedY = 0
+  function handleKeyUp(event) {
+    if (event.which === KEY.UP) {
+      walker.speedY = 0
+    }
+    if (event.which === KEY.DOWN) {
+      walker.speedY = 0
+    }
+    if (event.which === KEY.LEFT) {
+      walker.speedX = 0
+    }
+    if (event.which === KEY.RIGHT) {
+      walker.speedX = 0
+    }
   }
-  if(event.which === KEY.DOWN){
-    walker.speedY = 0
-  }
-  if(event.which === KEY.LEFT){
-    walker.speedX = 0
-  }
-  if(event.which === KEY.RIGHT){
-    walker.speedX = 0
-  }
- }
- 
- 
- function handleKeyDown(event) {
+
+
+  function handleKeyDown(event) {
     if (event.which === KEY.ENTER) {
       console.log("enter pressed")
     }
@@ -110,4 +111,24 @@ function runProgram() {
     $("#walker").css("top", walker.coordinateY)
   }
 
+  function wallCollision() {
+    const bottomSide = $("#board").height() - $("walker").height()
+    const rightSide = $("#board").width() - $("#walker").width()
+
+    if (walker.coordinateX < 0) {
+      walker.coordinateX = 0
+    }
+
+    if (walker.coordinateY < 0) {
+      walker.coordinateY = 0
+    }
+
+    if (walker.coordinateX > rightSide) {
+      walker.coordinateX = rightSide
+    }
+
+    if (walker.coordinateY > bottomSide) {
+      walker.coordinateY = bottomSide
+    }
+  }
 }
