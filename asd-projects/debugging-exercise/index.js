@@ -43,12 +43,12 @@ $(document).ready(function () {
         var circle = {};
 
         // this creates some useful variables that are not directly placed in the object
-        var maxX = boardWidth - circleRadius * 2;
+        var maXX = boardWidth - circleRadius * 2;
         var maxY = boardHeight - circleRadius * 2;
 
         // this gives the circle object all of the data that it needs to store
         circle.id = "#" + id;
-        circle.x = Math.random() * maxX + circleRadius;
+        circle.x = Math.random() * maXX + circleRadius;
         circle.y = Math.random() * maxY + circleRadius;
         circle.speedX = decideSpeed();
         circle.speedY = decideSpeed();
@@ -70,7 +70,8 @@ $(document).ready(function () {
     function addNewCircleElement(circle, id) {
 
         // this creates the HTML for a new circle element 
-        var $circle = $('<div>').attr('id', id)
+        var $circle = $('<div>')
+            .attr('id', id)
             .css('left', circle.x)
             .css('top', circle.y)
             .addClass("circle");
@@ -90,18 +91,18 @@ $(document).ready(function () {
     // to make seeing issues in the debugger slightly easier (in practice, you should use
     // circles.length, but do NOT change it here)
     for (var i = 0; i < maxCircles; i++) {
-        var makeCircle = circles(i);
+        var circles = maxCircles[i];
 
         // move the circle
-        moveCircle(circle);
+        moveCircle(circles);
 
         // bounce the circle, if it hits a wall
-        bounceCircle(circle);
+        bounceCircle(circles);
 
         // redraw the circle on the screen after it moves
-        updateCircleOnScreen(circle);
+        updateCircleOnScreen(circles);
     }
-}),
+},
 
     //////////////////////////
     // update helper functions
@@ -115,7 +116,6 @@ $(document).ready(function () {
 
     // this bounces circles if they hit a wall
     function bounceCircle(circle) {
-
         // this bounces off the left wall
         if (circle.x < 0) {
             circle.x -= circle.speedX;
@@ -145,4 +145,4 @@ $(document).ready(function () {
         // these lines redraw the circle's position
         $(circle.id).css('left', circle.x);
         $(circle.id).css('top', circle.y);
-    };
+    });
