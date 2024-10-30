@@ -112,7 +112,7 @@ function runProgram() {
   }
 
   function wallCollision() {
-    const bottomSide = $("#board").height() - $("walker").height()
+    const bottomSide = $("#board").height() - $("#walker").height()
     const rightSide = $("#board").width() - $("#walker").width()
 
     if (walker.coordinateX < 0) {
