@@ -85,24 +85,24 @@ $(document).ready(function () {
     //////////////////
 
     // this should move all of the circles
-    function update() { }
+    function update() {
 
-    // loop over the circles array. We use the maxCircles variable instead of circles.length
-    // to make seeing issues in the debugger slightly easier (in practice, you should use
-    // circles.length, but do NOT change it here)
-    for (var i = 0; i < maxCircles; i++) {
-        var circles = maxCircles[i];
+        // loop over the circles array. We use the maxCircles variable instead of circles.length
+        // to make seeing issues in the debugger slightly easier (in practice, you should use
+        // circles.length, but do NOT change it here)
+        for (var i = 0; i < maxCircles; i++) {
+            var circle = circles[i];
 
-        // move the circle
-        moveCircle(circles);
+            // move the circle
+            moveCircle(circle);
 
-        // bounce the circle, if it hits a wall
-        bounceCircle(circles);
+            // bounce the circle, if it hits a wall
+            bounceCircle(circle);
 
-        // redraw the circle on the screen after it moves
-        updateCircleOnScreen(circles);
-    }
-},
+            // redraw the circle on the screen after it moves
+            updateCircleOnScreen(circle);
+        }
+    };
 
     //////////////////////////
     // update helper functions
@@ -112,7 +112,7 @@ $(document).ready(function () {
     function moveCircle(circle) {
         circle.x = circle.speedX;
         circle.y += circle.speedY;
-    },
+    };
 
     // this bounces circles if they hit a wall
     function bounceCircle(circle) {
@@ -136,7 +136,7 @@ $(document).ready(function () {
             circle.y -= circle.speedY;
             circle.speedX *= -1;
         }
-    },
+    };
 
     // this redraws the circle's position on the screen
     function updateCircleOnScreen(circle) {
@@ -145,4 +145,5 @@ $(document).ready(function () {
         // these lines redraw the circle's position
         $(circle.id).css('left', circle.x);
         $(circle.id).css('top', circle.y);
-    });
+    };
+})
