@@ -11,7 +11,14 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
+var snake = {}
+var apple = {
+  element:,
+  row:,
+  column:,
+}
 
+var score = 0
 // Constant Variables
 var ROWS = 20;
 var COLUMNS = 20;
@@ -208,7 +215,7 @@ function makeSnakeSquare(row, column) {
 */
 function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
-  
+
 }
 
 /* Given a gameSquare (which may be a snakeSquare or the apple), position
