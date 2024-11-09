@@ -35,7 +35,7 @@ var updateInterval;
 
 // variable to keep track of the key (keycode) last pressed by the user
 var activeKey;
-
+snake.head.direction
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// GAME SETUP //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -115,9 +115,30 @@ function moveSnake() {
   HINT: The snake's head will need to move forward 1 square based on the value
   of snake.head.direction which may be one of "left", "right", "up", or "down"
   */
+  if (snake.head.direction === "left") {
+    snake.head.column = snake.head.column - 1;
+  }
+  repositionSquare(snake.head);
+  if (snake.head.direction === "right") {
+    snake.head.column = snake.head.column - 1;
+  }
+  repositionSquare(snake.head);
+  if (snake.head.direction === "up") {
+    snake.head.column = snake.head.column - 1;
+  }
+  repositionSquare(snake.head);
+  if (snake.head.direction === "down") {
+    snake.head.colun = snake.head.column - 1;
+  }
+  repositionSquare(snake.head);
 }
 
 function hasHitWall() {
+  return true;
+  ROWS;
+  COLUMNS;
+  snake.head.row;
+  snake.head.column
   /* 
   TODO 8: Should return true if the snake's head has collided with the four walls of the
   board, false otherwise.
@@ -135,8 +156,13 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-
+if(hasCollidedWithApple()){
+  handleAppleCollision();
+  return true;
+}
+else{
   return false;
+}
 }
 
 function handleAppleCollision() {
