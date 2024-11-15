@@ -12,11 +12,8 @@ var highScoreElement = $("#highScore");
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
 var snake = {}
-var apple = {
-  element: 0,
-  row: 0,
-  column: 0,
-}
+var apple = {}
+
 
 var score = 0
 // Constant Variables
@@ -35,7 +32,6 @@ var updateInterval;
 
 // variable to keep track of the key (keycode) last pressed by the user
 var activeKey;
-snake.head.direction
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// GAME SETUP //////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -156,13 +152,13 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-if(hasCollidedWithApple()){
-  handleAppleCollision();
-  return true;
-}
-else{
-  return false;
-}
+  if (hasCollidedWithApple()) {
+    handleAppleCollision();
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 function handleAppleCollision() {
@@ -248,7 +244,7 @@ function makeSnakeSquare(row, column) {
   snakeSquare.column = column;
   repositionSquare(snakeSquare);
   if (snake.body.length === 0) {
-    snakeSquare.element, attr("id", "snake-head");
+    snakeSquare.element.attr("id", "snake-head");
   }
   snake.body.push(snakeSquare);
   snake.tail = snakeSquare;
