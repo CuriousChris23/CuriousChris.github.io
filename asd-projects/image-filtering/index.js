@@ -33,6 +33,16 @@ function applyAndRender() {
 
 // TODO 1, 2 & 4: Create the applyFilter function here
 function applyFilter() {
+  for (var i = 0; i < image.length; i++) {
+    for (var j = 0; j < image[i].length; j++) {
+      //console.log(image[i][j])//
+      var rgbString = image[i][j]
+      var rgbNumbers = rgbStringToArray(rgbString)
+      console.log(rgbNumbers)
+      rgbNumbers[RED]
+    }
+  }
+
 }
 
 
