@@ -21,7 +21,8 @@ function resetAndRender() {
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
   applyFilter()
-
+;
+;; 
 
   // do not change the below line of code
   render($("#display"), image);
@@ -39,7 +40,11 @@ function applyFilter() {
       var rgbString = image[i][j]
       var rgbNumbers = rgbStringToArray(rgbString)
       console.log(rgbNumbers)
-      rgbNumbers[RED]
+      rgbNumbers[RED] = 0
+      rgbNumbers[GREEN] = 0
+      rgbNumbers[BLUE] = 0
+      max = 255
+      rgbArryToString(rgbNumbers)
     }
   }
 
