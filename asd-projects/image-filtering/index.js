@@ -45,6 +45,8 @@ function applyFilter() {
       rgbNumbers[BLUE] = 0
       max = 255
       rgbArryToString(rgbNumbers)
+    
+
     }
   }
 
@@ -58,8 +60,10 @@ function applyFilter() {
 
 
 // TODO 3: Create reddify function
+function reddify (){
+RED = [200]
 
-
+};
 // TODO 6: Create more filter functions
 
 
