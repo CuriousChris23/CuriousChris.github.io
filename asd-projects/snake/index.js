@@ -152,8 +152,8 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-  if (hasCollidedWithApple()) {
-    handleAppleCollision();
+  if () {
+   
     return true;
   }
   else {
