@@ -13,9 +13,10 @@ var highScoreElement = $("#highScore");
 // Game Variables
 var snake = {}
 var apple = {}
-
-
 var score = 0
+
+
+
 // Constant Variables
 var ROWS = 20;
 var COLUMNS = 20;
@@ -63,7 +64,7 @@ function init() {
  */
 function update() {
   // TODO 5b: Fill in the update function's code block
-  moveSnake();
+  // moveSnake();
 
   if (hasHitWall() || hasCollidedWithSnake()) {
     endGame()
@@ -130,11 +131,11 @@ function moveSnake() {
 }
 
 function hasHitWall() {
-  return true;
-  ROWS;
-  COLUMNS;
-  snake.head.row;
-  snake.head.column
+  // return true;
+  // ROWS;
+  // COLUMNS;
+  // snake.head.row;
+  // snake.head.column
   /* 
   TODO 8: Should return true if the snake's head has collided with the four walls of the
   board, false otherwise.
@@ -152,7 +153,7 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-  if () {
+  if (0) {
    
     return true;
   }
@@ -229,7 +230,7 @@ function makeApple() {
   var randomPosition = getRandomAvailablePosition();
   apple.row = randomPosition.row;
   apple.column = randomPosition.column;
-  repositionSquare(apple);
+  repositionSquare(apple); 
 }
 
 /* Create an HTML element for a snakeSquare using jQuery. Then, given a row and
