@@ -59,7 +59,7 @@ function applyFilter(filterFunction) {
 
 
 // TODO 7: Create the applyFilterNoBackground function
-
+function applyFilterNoBackground(){};
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(num) {
