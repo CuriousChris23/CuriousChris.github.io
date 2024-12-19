@@ -20,9 +20,9 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-  applyFilter(reddify)
-    ;
-  ;;
+  applyFilterNoBackground(reddify)
+
+
 
   // do not change the below line of code
   render($("#display"), image);
@@ -59,18 +59,20 @@ function applyFilter(filterFunction) {
 
 
 // TODO 7: Create the applyFilterNoBackground function
-function applyFilterNoBackground(filterFunction){
+function applyFilterNoBackground(filterFunction) {
+  const background = image[0][0]
+  console.log(background)
   for (var i = 0; i < image.length; i++) {
     for (var j = 0; j < image[i].length; j++) {
       //console.log(image[i][j])//
       var rgbString = image[i][j]
-      // console.log("1: " + rgbString)
+      console.log("1: " + rgbString)
       var rgbNumbers = rgbStringToArray(rgbString)
 
 
-
-      filterFunction(rgbNumbers)
-
+      if (background != rgbString) {
+        filterFunction(rgbNumbers)
+      }
 
 
 
@@ -98,7 +100,7 @@ function keepInBounds(num) {
 
 // TODO 3: Create reddify function
 function reddify(arr) {
-  console.log(arr)
+  // console.log(arr)
   arr[RED] = 200
 
 };
