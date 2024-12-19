@@ -58,7 +58,7 @@ $(document).ready(function () {
 
     // this generates a random speed value
     function decideSpeed() {
-        return Math.random() * doubleMaxSpeed / 2 - doubleMaxSpeed;
+        return (Math.random() * doubleMaxSpeed) / 2 - doubleMaxSpeed;
     }
 
     // this generates an id for a circle given the circle's number
@@ -90,7 +90,7 @@ $(document).ready(function () {
         // loop over the circles array. We use the maxCircles variable instead of circles.length
         // to make seeing issues in the debugger slightly easier (in practice, you should use
         // circles.length, but do NOT change it here)
-        for (var i = 0; i < maxCircles; i++) {
+        for (var i = 0; i < circles.length; i++) {
             var circle = circles[i];
 
             // move the circle
