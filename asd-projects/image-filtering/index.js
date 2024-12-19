@@ -59,7 +59,28 @@ function applyFilter(filterFunction) {
 
 
 // TODO 7: Create the applyFilterNoBackground function
-function applyFilterNoBackground(){};
+function applyFilterNoBackground(filterFunction){
+  for (var i = 0; i < image.length; i++) {
+    for (var j = 0; j < image[i].length; j++) {
+      //console.log(image[i][j])//
+      var rgbString = image[i][j]
+      // console.log("1: " + rgbString)
+      var rgbNumbers = rgbStringToArray(rgbString)
+
+
+
+      filterFunction(rgbNumbers)
+
+
+
+
+      rgbString = rgbArrayToString(rgbNumbers)
+      // console.log("2: " + rgbString)
+      image[i][j] = rgbString
+
+    }
+  }
+};
 
 // TODO 5: Create the keepInBounds function
 function keepInBounds(num) {
